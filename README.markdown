@@ -4,6 +4,10 @@ suite to nice html pages.
 ## Compiling ##
 There's no build script to compile test2html, so it has to be compiled manually.
 
+test2html uses [mustache4d](https://github.com/repeatedly/mustache4d) for html templates. You
+first have to compile mustache4d. Then replace "../mustache4d" with the path to your mustache4d
+installation.
+
 Use one of these commands
 
 ```
