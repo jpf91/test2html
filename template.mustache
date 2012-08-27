@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+{{#inlineStyleSheet}}
+    <style type="text/css">
+{{{css}}}
+    </style>
+{{/inlineStyleSheet}}
+{{#externStyleSheet}}
+    <link rel="stylesheet" type="text/css" href="{{url}}" />
+{{/externStyleSheet}}
+    <title>{{title}}</title>
+  </head>
+  <body>
+    <h1>Summary</h1>
+{{#summaryBlock}}
+    <h2>{{title}}</h2>
+    <table>
+      <thead><tr>
+{{#header}}
+        <th>
+          <a href="{{link}}" class="tooltip">
+            {{name}}
+            <span>{{{tooltip}}}</span>
+          </a>
+        </th>
+{{/header}}
+      </tr></thead>
+{{#row}}
+      <tr>
+{{#column}}
+        <td>{{value}}</td>
+{{/column}}
+      </tr>
+{{/row}}
+    </table>
+{{/summaryBlock}}
+    <h1>Details</h1>
+{{#detailBlock}}
+    <h2>{{title}}</h2>
+    <table>
+      <thead><tr>
+        <th class="test_name">Test name</th>
+{{#header}}
+        <th>
+          <a href="{{link}}" class="tooltip">
+            {{name}}
+            <span>{{{tooltip}}}</span>
+          </a>
+        </th>
+{{/header}}
+      </tr></thead>
+{{#row}}
+      <tr>
+        <td class="test_name">
+          <a href="https://github.com/D-Programming-GDC/GDC/blob/master/gcc/testsuite/gdc.test/{{name}}">{{name}}</a>
+        </td>
+{{#column}}
+        <td class="test_{{value}}">
+          <a href="{{link}}" class="tooltip">
+            {{value}}
+            <span>{{{tooltip}}}</span>
+          </a>
+        </td>
+{{/column}}
+{{#nrColumn}}
+        <td class="test_{{value}}">Not run</td>
+{{/nrColumn}}
+      </tr>
+{{/row}}
+    </table>
+{{/detailBlock}}
+  </body>
+</html>
