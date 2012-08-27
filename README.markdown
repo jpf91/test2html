@@ -24,11 +24,11 @@ It's then called like this:
 ```
 test2html --config config.json > testsuite.html
 ```
-If --externalCSS is passed test2html does not embed the testsuite.css file and instead references it.
+If *--externalCSS* is passed test2html does not embed the testsuite.css file and instead references it.
 
 ## Config file ##
 The JSON config file should look like this:
-```
+```json
 {
     "input" : [
         {
